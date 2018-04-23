@@ -1,8 +1,6 @@
-from bokeh.core.properties import String, Instance, Array
-from bokeh.layouts import column
+from bokeh.core.properties import Instance
 from bokeh.models import LayoutDOM, ColumnDataSource
-from bokeh.io import show, output_file
-
+from bokeh.io import show
 
 class Custom(LayoutDOM):
     __javascript__ = "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.min.js"

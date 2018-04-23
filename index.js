@@ -7,19 +7,21 @@ export class CustomView extends LayoutDOMView {
     super.initialize(options)
     this.render()
 
-    // Set BokehJS listener so that when the Bokeh slider has a change
-    // event, we can process the new data
+    // Here's where we put a listener
+    // Below is an example of what this could look like if we had a button on the page
+    // 
+    // this.connect(this.model.button.change, () => this.render())
   }
 
   render() {
-    // This is where you put your d3 code
+    // put your custom d3 code inside the render section
 
     d3.select("body").selectAll("div")
-    .data(this.model.dataset.get_column("x"))  // <-- The answer is here!
-    .enter()
-    .append("div")
-    .attr("class", "bar")
-    .style("height", function(d) {
+      .data(this.model.dataset.get_column("x"))  
+      .enter()
+      .append("div")
+      .attr("class", "bar")
+      .style("height", function(d) {
         var barHeight = d * 5;
         return barHeight + "px";
     });
